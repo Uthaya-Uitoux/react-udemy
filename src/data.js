@@ -1,4 +1,4 @@
-export const Core_Concepts=[
+export const coreConcepts=[
     {
         title:"Components",
         description:" The core UI building block"

@@ -1,0 +1,9 @@
+.concept-list {
+    list-style: none;
+    padding-left: 0;
+    display:flex;
+    gap:10px;
+}
+.concept-list li {
+    flex: 1;
+}

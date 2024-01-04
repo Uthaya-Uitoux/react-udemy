@@ -1,6 +1,7 @@
-import { Core_Concepts } from "./data.js";
+import { coreConcepts } from "./data.js";
 import './App.css'
 import Header from './Components/Header.jsx'
+import CoreConcepts from "./Components/CoreConcepts.jsx";
 
 
 //Header component and check the app() to call the <Header /> component
@@ -17,14 +18,7 @@ function CoreConcepts(props - remove this props and we the objects {}){
     </li>
   ) we can alo use this method
 }*/
-function CoreConcepts({title, description}){
-  return(
-    <li>
-    <h3>{title}</h3>
-    <p>{description}</p>
-    </li>
-  )
-}
+
 function App() {
   return (
     <div>
@@ -34,11 +28,11 @@ function App() {
       <h2>Core Concepts</h2>
       <ul className="concept-list">
       <CoreConcepts 
-        title= {Core_Concepts[0].title}
-        description ={Core_Concepts[0].description} />
-      <CoreConcepts {...Core_Concepts[1]} />
-      <CoreConcepts {...Core_Concepts[2]} />
-      <CoreConcepts {...Core_Concepts[3]} />
+        title= {coreConcepts[0].title}
+        description ={coreConcepts[0].description} />
+      <CoreConcepts {...coreConcepts[1]} />
+      <CoreConcepts {...coreConcepts[2]} />
+      <CoreConcepts {...coreConcepts[3]} />
       </ul>
       </section>
         <h2>Time to get started</h2>
