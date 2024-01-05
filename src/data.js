@@ -37,3 +37,26 @@ export const coreConcepts=[
   )*/
     }
 ]
+
+/**Giving the example details to optiize the code and give it in the o/p
+ * 
+ */
+export const EXAMPLES = {
+   Component:{
+      Title:'Header component and check the app() to call the <Header /> component',
+      Description: 'Check the each and evry step of changes o import this file in another component use the export &import option',
+      },
+    JSX:{
+      Title:'Passing custom Arguments as Events',
+      Description: 'Pass the arrow function in the menu  <TabButton onSelect={()=> handleClick("Component")}>"Component"</TabButton>',
+      },
+    Props:{
+      Title:'Clicking Event and get the o/p in the screen//Passing function as values',
+      Description: 'create a new function inside the app.jsx component and modify the examples section<TabButton onSelect={handleClick}>"Component"</TabButton> ',
+      },
+    State:{
+        Title:'Managing state and using HOOKS',
+        Description: 'Import the hooks i react project - import {useState} from "react";'
+     }
+}
+  

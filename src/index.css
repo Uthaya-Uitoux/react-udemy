@@ -26,6 +26,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
+  background-color: #140524;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -33,6 +34,12 @@ body {
 #core-concepts{
   padding: 2rem;
   border-radius:6px;
-  background-color: #140524;
+  background-color: #010001;
+  box-shadow: 0 2px 8pxrgba(0,0,0,0.4);
+}
+#tab-content{
+  padding:2rem;
+  border-radius:6px;
+  background-color: #010101;
   box-shadow: 0 2px 8pxrgba(0,0,0,0.4);
 }

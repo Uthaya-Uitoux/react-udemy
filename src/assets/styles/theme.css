@@ -1,3 +1,8 @@
+h1,h3,h2{
+    background: linear-gradient(45deg, #ff0000, #0000ff);
+    background-clip: text;
+    color:transparent
+  }
 .concept-list {
     list-style: none;
     padding-left: 0;
@@ -6,4 +11,17 @@
 }
 .concept-list li {
     flex: 1;
+}
+#Examples{
+    margin:3rem auto;
+}
+#Examples{
+    text-align: left;
+}
+#Examples menu {
+    margin:1rem auto;
+    list-style: none;
+    display:flex;
+    gap:2px;
+    color: #535bf2;
 }
