@@ -26,9 +26,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: eval $(ssh-agent -s)
-      shell: bash
-    - run: ssh-add - <<< ${{ secrets.ACTIONS_DEPLOY_KEY }}
+    - name: Set up SSH Agent
+      run: |
+          eval $(ssh-agent -s)
+          echo "${{ secrets.ACTIONS_DEPLOY_KEY }}" | tr -d '\r' | ssh-add -
       shell: bash
     - name: Install dependencies
       run: npm install
