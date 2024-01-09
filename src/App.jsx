@@ -196,11 +196,9 @@ function App() {
       <section id="core-concepts">
       <h2>Core Concepts</h2>
       <ul className="concept-list">
-        {coreConceptsList.length > 0 ? 
-          coreConceptsList.map((data, i)=> (
-            <CoreConcepts title={data.title} description={data.description} key={i} />
-          )) : <> No Data Found </>
-        }
+        {coreConceptsList.map((data, i)=> (
+          <CoreConcepts title={data.title} description={data.description} key={i} />
+        ))}
       </ul>
       </section>
       <section id ="Examples">
