@@ -1,10 +1,8 @@
 import {useState} from 'react';
-import { coreConcepts } from "./data.js";
-import {EXAMPLES}from "./data.js"
+import { coreConceptsList, EXAMPLES } from "./data.js";
 import './App.css'
 import Header from './Components/Header.jsx'
 import CoreConcepts from "./Components/CoreConcepts.jsx";
-
 import TabButton from "./Components/TabButton.jsx";
 
 
@@ -160,7 +158,7 @@ export default App;
 
       /**Derving the proper o/p for the elements */
 function App() {
-  const [selectedTopic, setSelectedTopic]= useState('Component');
+  const [selectedTopic, setSelectedTopic]= useState();
   
   
   function handleClick(selectedButton){
@@ -168,7 +166,7 @@ function App() {
     setSelectedTopic(selectedButton);
     console.log(selectedTopic)
 
-}
+  }
   return (
     <div>
     <Header /> 
@@ -177,26 +175,29 @@ function App() {
       <section id="core-concepts">
       <h2>Core Concepts</h2>
       <ul className="concept-list">
-      <CoreConcepts 
-        title= {coreConcepts[0].title}
-        description ={coreConcepts[0].description} />
-      <CoreConcepts {...coreConcepts[1]} />
-      <CoreConcepts {...coreConcepts[2]} />
-      <CoreConcepts {...coreConcepts[3]} />
+        {coreConceptsList.length > 0 ? 
+          coreConceptsList.map((data, i)=> (
+            <CoreConcepts title={data.title} description={data.description} key={i} />
+          )) : 
+          <>No Data</>
+        }
       </ul>
       </section>
       <section id ="Examples">
           <h2>Examples</h2>
           <menu>
-          <TabButton onSelect={ ()=> handleClick('Component')}>"Component"</TabButton>
-          <TabButton onSelect={()=> handleClick('JSX')}>"JSX"</TabButton>
-          <TabButton onSelect={()=> handleClick('Props')}>"Props"</TabButton>
-          <TabButton onSelect={()=> handleClick('State')}>"State"</TabButton>
+            <TabButton onSelect={ ()=> handleClick('Component')}>"Component"</TabButton>
+            <TabButton onSelect={()=> handleClick('JSX')}>"JSX"</TabButton>
+            <TabButton onSelect={()=> handleClick('Props')}>"Props"</TabButton>
+            <TabButton onSelect={()=> handleClick('State')}>"State"</TabButton>
           </menu>
-          <div id="tab-content">
-          <p>{EXAMPLES[selectedTopic].Title}</p>
-          <p>{EXAMPLES[selectedTopic].Description}</p>
-          </div>
+          {selectedTopic && 
+            <div id="tab-content">
+              <p>{EXAMPLES[selectedTopic].Title}</p>
+              <p>{EXAMPLES[selectedTopic].Description}</p>
+            </div>
+          }
+          
       </section>
       </main>
     </div>

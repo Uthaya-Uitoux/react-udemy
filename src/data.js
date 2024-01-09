@@ -1,4 +1,4 @@
-export const coreConcepts=[
+export const coreConceptsList = [
     {
         title:"Components",
         description:" The core UI building block"
@@ -44,7 +44,7 @@ export const coreConcepts=[
 export const EXAMPLES = {
    Component:{
       Title:'Header component and check the app() to call the <Header /> component',
-      Description: 'Check the each and evry step of changes o import this file in another component use the export &import option',
+      Description: 'Check the each and every step of changes of import this file in another component use the export &import option',
       },
     JSX:{
       Title:'Passing custom Arguments as Events',
