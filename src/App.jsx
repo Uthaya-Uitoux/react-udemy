@@ -179,7 +179,7 @@ export default App;
        */
       
 function App() {
-  const [selectedTopic, setSelectedTopic]= useState();
+  const [selectedTopic, setSelectedTopic]= useState('Component');
   
   
   function handleClick(selectedButton){
