@@ -25,3 +25,13 @@ h1,h2,h3{
     gap:2px;
     color: #535bf2;
 }
+button{
+    width:auto;
+    height:35px;
+    margin:1px;
+    background:white;
+}
+.active{
+    color:white;
+    background:#535bf2;
+}

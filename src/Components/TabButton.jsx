@@ -74,12 +74,22 @@ In React JS we can use onClick function - advance method
         ); */
 
 
-        /*Passing custom Arguments as Events
-         */
-export default function TabButton({children, onSelect}){
+        /*Passing custom Arguments as Events and highlight the content when selected
+
+        export default function TabButton({children, onSelect, isSelected}){
     return(
         <li>
-        <button onClick ={onSelect}>{children}</button>
+        <button className={isSelected ? "active" : undefined} onClick ={onSelect}>{children}</button>
+        </li>
+        );
+}
+         */
+
+
+export default function TabButton({children, onSelect, isSelected}){
+    return(
+        <li>
+        <button className={isSelected ? "active" : undefined} onClick ={onSelect}>{children}</button>
         </li>
         );
 }

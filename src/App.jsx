@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, Fragment} from 'react';
 import { coreConceptsList, EXAMPLES } from "./data.js";
 import './App.css'
 import Header from './Components/Header.jsx'
@@ -156,7 +156,28 @@ export default App;
        */
 
 
-      /**Derving the proper o/p for the elements */
+      /**Derving the proper o/p for the elements
+       * Refer this line const [selectedTopic, setSelectedTopic]= useState(); -useState should be empty
+          ....
+       *  {!selectedTopic&& <p>Please select the value</p>} -- Showing this content in default and after selecting the title this should be changed
+          {selectedTopic && 
+            <div id="tab-content">
+              <p>{EXAMPLES[selectedTopic].Title}</p>
+              <p>{EXAMPLES[selectedTopic].Description}</p>
+            </div>
+          }
+      */
+  
+
+      /* *when selecting the button that should be highlighted by using this 2 steps
+
+      step1:Instering his content in app.jsx
+          ---isSelected ={selectedTopic === "Component"}
+              <TabButton isSelected ={selectedTopic === "Component"} onSelect={ ()=> handleClick('Component')}>Component</TabButton>
+             <TabButton isSelected ={selectedTopic === "JSX"} onSelect={()=> handleClick('JSX')}>JSX</TabButton>
+      step2:
+       */
+      
 function App() {
   const [selectedTopic, setSelectedTopic]= useState();
   
@@ -168,7 +189,7 @@ function App() {
 
   }
   return (
-    <div>
+    <>
     <Header /> 
       <main>
       <h2>Time to get started</h2>
@@ -178,19 +199,19 @@ function App() {
         {coreConceptsList.length > 0 ? 
           coreConceptsList.map((data, i)=> (
             <CoreConcepts title={data.title} description={data.description} key={i} />
-          )) : 
-          <>No Data</>
+          )) : <> No Data Found </>
         }
       </ul>
       </section>
       <section id ="Examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onSelect={ ()=> handleClick('Component')}>"Component"</TabButton>
-            <TabButton onSelect={()=> handleClick('JSX')}>"JSX"</TabButton>
-            <TabButton onSelect={()=> handleClick('Props')}>"Props"</TabButton>
-            <TabButton onSelect={()=> handleClick('State')}>"State"</TabButton>
+            <TabButton isSelected ={selectedTopic === "Component"} onSelect={ ()=> handleClick('Component')}>Component</TabButton>
+            <TabButton isSelected ={selectedTopic === "JSX"} onSelect={()=> handleClick('JSX')}>JSX</TabButton>
+            <TabButton isSelected ={selectedTopic === "Props"} onSelect={()=> handleClick('Props')}>Props</TabButton>
+            <TabButton isSelected ={selectedTopic === "State"} onSelect={()=> handleClick('State')}>State</TabButton>
           </menu>
+          {!selectedTopic&& <p>Please select the Title</p>}
           {selectedTopic && 
             <div id="tab-content">
               <p>{EXAMPLES[selectedTopic].Title}</p>
@@ -200,7 +221,7 @@ function App() {
           
       </section>
       </main>
-    </div>
+    </>
   );
 }
 
