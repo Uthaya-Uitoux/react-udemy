@@ -15,6 +15,7 @@ export default function Header() {
     <header>
       <h1>React Essentials</h1>
       <p>{changeDesc} react concepts to know and get expertize </p>
+      <h2>Time to get started</h2>
     </header>
     );
   }
