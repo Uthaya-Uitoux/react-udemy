@@ -57,5 +57,4 @@ jobs:
         run: |
           git add dist
           git commit -m "Deploy to GitHub Pages"
-          git remote add origin_with_token "https://${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}"
-          git push origin_with_token HEAD:main
+          git push https://uthaya-uitoux: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@github.com/uthaya-uitoux/react-udemy.git HEAD:main
