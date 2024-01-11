@@ -20,7 +20,7 @@ import TabButton from "./TabButton.jsx"
 }
  */
 export default function Examples(){
-    const [selectedTopic, setSelectedTopic]= useState();
+    const [selectedTopic, setSelectedTopic]= useState('Component');
   
   function handleClick(selectedButton){
     //selectedButton should be any 1 of this [ component, jsx, props, state]
