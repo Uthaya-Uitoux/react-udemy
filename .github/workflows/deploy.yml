@@ -41,11 +41,19 @@ jobs:
         with:
           node-version: 20
 
-      - name: Publish to GitHub Pages
+      - name: Ensure Dist Directory
+        run: mkdir dist
+  
+      - name: Create CNAME File
+        run: echo "uthaya-uitoux.github.io/react-udemy" > dist/CNAME
+
+      - name: Setup Git
         run: |
-          echo "uthaya-uitoux.github.io/react-udemy" > dist/CNAME
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+
+      - name: Commit and Push to GitHub Pages
+        run: |
           git add dist
           git commit -m "Deploy to GitHub Pages"
           git push
