@@ -3,7 +3,7 @@
 
 # .github/workflows/deploy.yml
 
-name: Deploy
+name: Deploy React
 
 on:
   push:
