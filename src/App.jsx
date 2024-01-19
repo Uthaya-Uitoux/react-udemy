@@ -1,4 +1,3 @@
-import {Fragment} from 'react';
 import './App.css'
 import Header from './Components/Header.jsx'
 import CoreConcept from './Components/CoreConcept.jsx';
@@ -181,13 +180,13 @@ export default App;
 function App() {
   
   return (
-    <>
+    <div>
     <Header /> 
       <main>
       <CoreConcept />
       <Examples />
       </main>
-    </>
+      </div>
   );
 }
 
