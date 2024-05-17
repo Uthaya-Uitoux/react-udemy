@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import { EXAMPLES } from "../data.js"
 import TabButton from "./TabButton.jsx"
-import Tabs from './Tabs.jsx';
+//import Tabs from './Tabs.jsx';
 
 
 
